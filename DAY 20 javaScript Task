@@ -1,0 +1,33 @@
+1 . Use push, pop, shift, unshift on an array.
+
+
+let colors = ["Red", "Blue"];
+
+console.log("Start:", colors);
+
+// add to end
+colors.push("Green", "Yellow");
+console.log("After push:", colors);
+
+// remove last
+let removedLast = colors.pop();
+console.log("Removed last:", removedLast);
+console.log("Now:", colors);
+
+// add to beginning
+colors.unshift("Black");
+console.log("After unshift:", colors);
+
+// remove first
+let removedFirst = colors.shift();
+console.log("Removed first:", removedFirst);
+console.log("Final array:", colors);
+
+
+2) Print array using for loop (reverse order this time)
+
+let marks = [85, 90, 78, 92];
+
+for (let i = marks.length - 1; i >= 0; i--) {
+    console.log("Index:", i, "Value:", marks[i]);
+}
