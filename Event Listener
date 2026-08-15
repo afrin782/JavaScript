@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="inputBox" placeholder="Type here">
+
+<p id="showText"></p>
+
+<button id="btn">Click</button>
+
+<p id="output"></p>
+
+<script>
+    // show text while typing
+    document.getElementById("inputBox").addEventListener("input", function() {
+        document.getElementById("showText").innerText = this.value;
+    });
+
+    // button click event
+    document.getElementById("btn").addEventListener("click", function() {
+        document.getElementById("output").innerText = "You typed: " + document.getElementById("inputBox").value;
+    });
+</script>
+    
+</body>
+</html>
+
+
+
+
+
+
+
