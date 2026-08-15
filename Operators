@@ -1,0 +1,12 @@
+let a = 10;
+console.log(a + 1);
+console.log(a - 1);
+console.log(a * 1);
+console.log(a / 1); 
+console.log(a % 1); //reminder
+console.log(a++); // 1st print original value, then increment to print
+console.log(a--);
+console.log(a += 1);
+console.log(a -= 1);
+console.log(a /= 1);
+console.log(a *= 1);
