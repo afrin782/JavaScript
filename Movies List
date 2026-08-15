@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style-type: none;
+            display: flex;
+            gap: 30px;            
+        }
+        
+        li {
+            background-color: aqua;            
+            border: 2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <ul id="movieList">   
+        <!-- <li>
+             <div>
+                <img src="https://picsum.photos/100">
+                <p>movie 1</p>
+            </div>
+        </li>
+        
+       <li>
+             <div>
+                <img src="https://picsum.photos/100">
+                <p>movie 2</p>
+            </div>
+        </li> -->
+        
+    </ul>    
+    <script>
+        //get movie details
+        let movieDetails = ["movie 1","movie 2"]//"api/products";                
+
+        //get ul element
+        let ul = document.getElementById("movieList");
+
+        //create img array
+        let img = [];
+        let imagePath;
+        for(let i = 0 ; i < 2;i++)
+        {
+            imagePath = 'img' + (i+1) + '.PNG';    
+            img[i] = imagePath;
+            console.log(img[i]);
+        }
+
+        //movie details  movie1 movie2 movie3
+        movieDetails.map((item) => {  
+             // step 1: create div
+            let div;
+            div = document.createElement("div");
+            // step 2: create img
+
+            let image = document.createElement('img');
+            if(item === "movie 1")
+            {
+                image.src = img[0];
+            }
+            else if(item === "movie 2") {
+                image.src = img[1];
+            }
+
+            let p;
+            let li;
+                
+            //step 3: create p
+             p= document.createElement('p');
+                p.innerText = item;
+
+                 div.appendChild(image);
+                 div.appendChild(p);
+            //create li
+              li= document.createElement("li");
+                li.appendChild(div);
+            ul.appendChild(li);
+           
+        });       
+    </script>
+</body>
+</html>
