@@ -1,0 +1,49 @@
+//You start from home
+//You wait for the bus (async → Promise)
+//Bus may come (resolve) or not come (reject)
+//Once you reach office → callback runs
+
+//1.Function with callback
+function reachOffice(callback) {
+    console.log("Reached office");
+    callback();
+}
+
+//2. Promise (bus arrival)
+function waitForBus() {
+    return new Promise((resolve, reject) => {
+        console.log("Waiting for bus ");
+
+        setTimeout(() => {
+            let busArrived = true; // change to false to test reject
+
+            if (busArrived) {
+                resolve("Bus arrived ");
+            } else {
+                reject("Bus didn't come");
+            }
+        }, 2000);
+    });
+}
+
+//3. Handling with .then() and .catch()
+waitForBus()
+    .then((result) => {
+        console.log(result);
+        reachOffice(() => {
+            console.log("Started working 💼");
+        });
+    })
+    .catch((error) => {
+        console.log(error);
+    });
+
+//Simple understanding
+
+/*Callback → "After reaching office, do this"
+
+Promise → "Bus will come or not"
+
+then() → If success 
+
+catch() → If failure */
