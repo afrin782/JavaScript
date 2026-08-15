@@ -1,0 +1,68 @@
+function getApplianceDetails() {
+
+}
+
+//pick container 1 by 1 from the tray:
+
+//for 
+let tray = ["sugar", "salt", "chilli"];
+tray.push("elachi");
+tray.unshift("pepper");
+for(let index = 0; index < tray.length; index++) {
+    console.log(tray[index]);
+}
+tray.pop();
+tray.shift();
+console.log(tray);
+
+//for each
+let tray1 = ["sugar", "salt", "chilli"];
+tray1.forEach((container) => console.log(container));
+
+//map
+let tray2 = ["sugar", "salt", "chilli"];
+tray2.map((container,index) => console.log(container,index));
+
+//create object
+let num = [20,27,24,18];
+let userdetails = [{id:1, name:"john", age:20}, 
+                   {id:2, name:"Alice", age:27},
+                   {id:3, name:"bob", age:24},
+                   {id:4, name:"richard", age:18}];
+for(let i=0; i < userdetails.length;i++){
+    if(userdetails[i].age >= 18) {
+        console.log(userdetails[i].name + " - eligible to vote");
+    }
+}
+
+//filter
+let age =[21, 34, 23, 72, 38];
+let result = age.filter((age) => age > 30);
+result.forEach((age) => console.log(age));
+
+//find
+let ages =[21, 34, 23, 72, 38];
+let result1 = ages.find((ages) => ages > 30);
+console.log(result1);
+
+//includes
+let age1 =[21, 34, 23, 72, 38];
+let results = age1.includes(23);
+console.log(results);
+
+//reduce
+let num1 = [1,2,3,4];
+let result2 = num1.reduce((accumulator, item) => accumulator + item, 0);
+console.log(result2);
+
+//reduce - in string value
+let colors = ["red", "blue", "red", "green", "red"];
+let count = colors.reduce((accumulator, item) => {
+  if (item === "red") {
+    return accumulator + 1;
+  } else {
+    return accumulator;
+  }
+}, 0);
+console.log(count);
+
