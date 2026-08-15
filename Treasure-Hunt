@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="boat">
+      <ul id="crew">
+        <li><button disabled="true">Jack Sparrow</button></li>
+        <li>Alice</li>
+        <li>Bob</li>
+        <li>Richard</li>
+      </ul>
+      <button onclick="askRoute('Jack')">Asking Jack</button>
+      <button onclick="askRoute('Alice')">Asking Alice</button>
+    </div>
+    <script>
+      function askRoute(name) {
+        if (name === "Jack") {
+          console.log(name + " Directing To Take North");
+        } 
+        else if (name === "Alice") {
+          console.log(name + " Directing To Take South");
+        }
+      }
+    </script>
+  </body>
+</html>
