@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul{
+            display: flex;
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Online Shop</h1>
+    <b>Cart(<span id="cart-count">0</span>)</b>
+    </header>
+    <main>
+        <ul>
+            <li>
+                Good Day
+                <button Onclick="addToCart()">Add To Cart</button>
+            </li>
+            <li>
+                Hide & Seek
+                <button Onclick="addToCart()">Add To Cart</button>
+            </li>
+            <li>
+                Parle-G
+                <button Onclick="addToCart()">Add To Cart</button>
+            </li>
+        </ul>
+    </main>
+
+    <script>
+        function addToCart() {
+            let cart_count = document.getElementById("cart-count").innerHTML
+            cart_count++;
+            document.getElementById("cart-count").textContent = cart_count;
+        }
+    </script>
+    
+</body>
+</html>
