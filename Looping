@@ -1,0 +1,31 @@
+//Print numbers 1 to 10 using for loop.
+for(let i=1; i<=10; i++) {
+    console.log(i);
+}
+
+//Print numbers 1 to 5 using while loop.
+let a = 1;
+while(a <= 5) {
+    console.log(a++);
+}
+
+//Print numbers 1 to 3 using do-while loop.
+let b = 1;
+do {
+    console.log(b);
+    b++;
+}
+while(b <= 3);
+
+//Print numbers 1–10, skip 5 using continue, stop at 8 using break.
+for (let i = 1; i <= 10; i++) {
+    if (i === 5) {
+        continue; // skip 5
+    }
+    if (i == 9) {
+        break; // stop at 8
+    }
+    console.log(i);
+}
+
+
