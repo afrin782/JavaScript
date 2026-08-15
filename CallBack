@@ -1,0 +1,30 @@
+function A(num) {
+    console.log("This is inside function A" + num);
+}
+A(1);
+
+//a function which is passed from within another function which can be called 
+// immediately after a particular task is completed.
+
+//give any name inside the ( )
+function A(callback) { //callback = B
+    console.log("This is inside function A");
+    callback();
+}
+A(B);
+
+function B() {
+    console.log("Iam B inside function A");
+}
+
+//2 numbers should be added and the result must be multiplied with 5
+function Add(a,b,callback) {
+    let result = a+b;
+    callback(result);
+}
+//here, multiply is the callback
+function Multiply(result) {
+    console.log(result * 5);
+}
+
+Add(1,2,Multiply);
