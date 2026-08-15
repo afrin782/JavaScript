@@ -1,0 +1,112 @@
+//class is a template or blueprint which can be used to create objects
+class Person {    
+    constructor(name,age) {
+        this.name = name;        
+        this.age = age;        
+    }
+
+    intro() {
+        console.log("My name is " + this.name);
+        console.log("My age is " + this.age);
+    }
+}
+
+//new - occupy the memory storage
+const student = new Person('John',15);  
+student.intro();
+
+const employee = new Person("Alice",25);
+employee.intro();
+
+
+
+class Person {    
+    constructor(name,age) {
+        this.name = name;        
+        this.age = age;        
+    }
+
+    intro() {
+        console.log("My name is " + this.name);
+        console.log("My age is " + this.age);
+    }
+}
+
+//Inheritance
+//in inheritance , not need to create obj, we can create datas by create a class
+//inherit the child class in parent class by using "extends" keyword
+class Student extends Person {
+    constructor(name, age, total_marks) {
+       //get the contructor data from parent class by using "super" keyword 
+        super(name,age);
+        this.total_marks = total_marks;
+    }
+
+    showTotalMarks() {
+        console.log("My Total Marks is " + this.total_marks);
+    }
+}
+
+class Employee extends Person{
+    constructor(name,age,salary) {
+        super(name,age);
+        this.salary = salary;
+    }
+
+    showSalary() {
+        console.log("My salary is " + this.salary);
+    }
+}
+const studObj = new Student("John",15,400);
+studObj.intro();
+studObj.showTotalMarks();
+
+const empObj = new Employee("Alice",23,10000);
+empObj.intro();
+empObj.showSalary();
+
+
+//
+
+// let name = "John";
+// function person(id_val) {
+//     let id; 
+//     console.log(id);
+// }
+
+// person(1);
+
+//Encapsulation
+class User {
+   #password;
+   constructor(uname,pwd) {
+    this.username = uname;
+    this.#password = pwd;
+   } 
+
+   validateCredentials(pwd) {
+    return this.#password == pwd; 
+   }
+}
+
+const user = new User("John","Secret123"); //registration
+console.log(user.validateCredentials("Secret123"));
+
+//static
+class UserLogin {
+    static userCount = 0;
+    constructor () {
+        console.log('User Logged In');  
+        this.userCount++;      
+    }
+    static getUserCount() {        
+        console.log(this.userCount);
+    }   
+}
+
+const user1 = new UserLogin();
+UserLogin.getUserCount();
+const user2 = new UserLogin();
+UserLogin.getUserCount();
+const user3 = new UserLogin();
+UserLogin.getUserCount();
