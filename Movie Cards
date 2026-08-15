@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Cards</title>
+    <style>
+        .card {
+            width: 150px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        img {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Movie List</h2>
+
+<div id="movieContainer"></div>
+
+<script>
+//Movie Data (Array)
+const movies = [
+    { name: "Leo", id:1, img: "https://i.pinimg.com/736x/24/e6/57/24e6577daac5c66c2c76dc4d84b1e39f.jpg" },
+    { name: "Jailer", img: "https://upload.wikimedia.org/wikipedia/en/c/cb/Jailer_2023_Tamil_film_poster.jpg" },
+    { name: "Vikram", img: "https://i.pinimg.com/736x/f1/d5/ea/f1d5ea79a8838c36862785e331bc3345.jpg" }
+];
+
+//Get container
+const container = document.getElementById("movieContainer");
+
+//Go through each movie one by one
+movies.forEach(movie => {
+    const card = document.createElement("div");
+    card.className = "card";
+
+//Add content inside card
+    card.innerHTML = `<img src="${movie.img}"><h4>${movie.name}</h4>`;
+//Add card to the page
+    container.appendChild(card);
+});
+</script>
+</body>
+</html>
