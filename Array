@@ -1,0 +1,51 @@
+// store set of values and both values are same data type.
+let numbers = [1,2,3,4,5];
+console.log(numbers);
+
+//print number 5
+let numbers1 = [1,2,3,4,5];
+console.log(numbers[4]);
+
+//Insert values
+let numbers2 = [];
+numbers[0] = 1;
+numbers[1] = 2;
+console.log(numbers);
+
+//Push - add in last place
+let numbers3 = [];
+numbers.push(1);
+numbers.push(2);
+console.log(numbers);
+
+// push & pop value using for loop
+/*let numbers = [];
+for(let i = 1; i <= 5;i++) {
+    numbers.push(i);
+}
+console.log(numbers);
+numbers.pop();//LIFO - Last In First Out
+console.log(numbers);*/
+
+let numbers4 = [];
+for(let i = 1; i <= 5;i++) {
+    numbers4.push(i);
+}
+console.log(numbers4);
+for(let i = 0;i <= 3;i++) // it runs 3 times and pop last 3 values
+{
+numbers4.pop();//LIFO - Last In First Out
+}
+console.log(numbers4);
+
+//unshift - add in first place
+let numbers5 = [1,2,3,4]
+numbers5.unshift(6);
+console.log(numbers5);
+
+//shift - remove from fist place
+let numbers6 = [1,2,3,4]
+numbers6.shift();
+console.log(numbers6);
+
+
