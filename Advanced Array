@@ -1,0 +1,72 @@
+//map:
+//It goes through (traverse) each element.It creates a new array .It does NOT change original array.
+let numbers = [1, 2, 3, 4, 5];
+numbers.map((item, index) => console.log(item, index));
+
+//Filter: (find even numbers) - Used to get multiple values from an array based on a condition.
+let numbers1 = [1, 2, 3, 4, 5];
+function evenNumbers() {
+    console.log(numbers1.filter((item) => item % 2 === 0));// you can give any name instead of "item"
+
+}
+evenNumbers();
+
+//find - Used to get only the first matching value
+let numbers2 = [1, 2, 3, 4, 5];
+let result = numbers2.find((item) => item % 2 === 0);
+console.log(result);
+
+//Reduce - combine all values into one value(sum of values).
+let numbers3 = [1, 2, 3, 4, 5];
+function addNumbers() {
+    //accumulator - add value one by one (add value from 0)
+    console.log(numbers3.reduce((accumulator, item) => accumulator + item, 0));// initialize accumulator = 0
+
+}
+addNumbers();
+
+//real world example for ecommerce website
+let obj = { id: 1, product: "AC", cart: 1 };
+console.log(obj.product);
+
+//Include - used to check the value is available in array or not
+let numbers4 = [1, 2, 3, 4, 5];
+console.log(numbers4.includes(1));
+
+//use {} to create object
+let obj1 = [{ id: 1, name: "john", age: 21 },
+           { id: 2, name: "alice", age: 23 }];//An object stores data in key–value pairs
+console.log(obj1[1].id);
+console.log(obj1[1].name);
+console.log(obj1[1].age);
+
+//
+let a = 1; //single value
+console.log(a);
+let numbers5 = [1, 2, 3, 4, 5]; //multiple value in an array
+console.log(numbers5[0]);
+
+//create function in array value
+let ageVal = 40;
+let obj2 = {id: 1,
+            name: "Bob", 
+            age: function () {
+                  return ageVal;
+            }////storing a function inside an array
+        }
+
+console.log(obj2.id);
+console.log(obj2.name);
+console.log(obj2.age());//storing a function inside an array
+
+
+
+let obj3 = [{ id: 1, name: "john", age: 21,rollno: null },
+           { id: 2, name: "alice", age: 23, rollno: 234 }];
+           console.log(obj3);
+
+ 
+let obj4 = [{id:'',value:''}];
+obj4[0].id = 1;   
+console.log(obj4); 
+           
