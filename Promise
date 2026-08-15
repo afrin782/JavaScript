@@ -1,0 +1,40 @@
+//Promise - resolve, reject
+
+//callback
+function Add(a, b, callback) {
+    let result = a + b;
+    callback(result);
+}
+
+function Multiply(result) {
+    console.log(result * 5);
+}
+
+Add(1, 2, Multiply);
+
+//promise - resolve
+//then is must be in promise , bcoz it is syntax
+//only 1 resolve for 1 promise
+function taskPerformance() {
+    return new Promise((resolve) => {
+        let a = 1, b = 2;
+        resolve(a + b);//return a + b
+    });
+}
+
+taskPerformance()
+    .then((result) => {
+        return result; //3
+    })
+    .then((result) => {
+        return Multiply(result); //15
+    })
+    .then((result) => {
+        let finalResult = subtract(result);
+        console.log(finalResult);
+    })
+    .catch((error) => {
+        console.log(error.message);
+    })
+
+    //multiple times use .then to  overcome the callback hell 
