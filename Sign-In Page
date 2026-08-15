@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label>First Name: </label><br/>
+    <input type="text" id="fname"><br/>
+    <label>Last Name: </label><br/>
+    <input type="text" id="lname"><br/>
+    <label>Age: </label><br/>
+    <input type="number" id="age">
+    <button id="submitAge()">Submit Age</button><br><br>
+    <button onclick="signUpDetails()">Sign Up</button>
+    <script>
+      function signUpDetails() {
+        let fname = document.getElementById("fname").value;
+        let lname = document.getElementById("lname").value;
+        let obj = [];
+        obj.push({ FirstName: fname, LastName: lname });
+        console.log(obj);
+      }
+
+      function submitAge() {
+        let age = [];
+        age.push(document.getElementById("age").value);
+        console.log(age);
+      }
+    </script>
+  </body>
+</html>
