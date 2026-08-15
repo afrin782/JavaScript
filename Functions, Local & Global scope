@@ -1,0 +1,36 @@
+// 1. Function to add two numbers (Function Declaration) 
+function add(a, b) { 
+return a + b; 
+} 
+console.log(add(5, 3)); // 8 
+
+// 2. Function Expression to multiply two numbers 
+const multiply = function(a, b) { 
+return a * b; 
+}; 
+console.log(multiply(4, 2)); // 8 
+
+// 3. Arrow function to subtract two numbers 
+const subtract = (a, b) => a - b; 
+console.log(subtract(10, 6)); // 4 
+
+// 4. Function with parameters and return value 
+function greet(name) { 
+return "Hello " + name; 
+} 
+console.log(greet("Afrin")); // Hello Afrin 
+
+// 5. Global vs Local Scope 
+let globalVar = "I am global"; // Global scope 
+function testScope() { 
+let localVar = "I am local"; // Local scope 
+console.log(globalVar);  
+console.log(localVar);   
+} 
+testScope(); 
+console.log(globalVar); // accessible 
+// console.log(localVar);     
+/*Easy understanding: 
+Error (not accessible) 
+• Global variable → can use anywhere 
+• Local variable → only inside the function */
