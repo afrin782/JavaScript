@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="alert('click first button')">Click first</button>
+    <button id="btn1">Click second</button><br><br>
+    <input id="uname" onchange="getUser()" type="text" placeholder="username"><br><br>
+    <input id="pwd" oninput="alert('Entering Password')" type="password" placeholder="password">
+    <script>
+        document.getElementById('btn1').onclick = function() {
+            alert("button second clicked");
+        }
+        document.getElementById('uname').onchange = function() {
+            let uname= document.getElementById('uname').value;
+            alert(uname);
+        }
+
+        document.getElementById('pwd').oninput = function() {
+            alert('Entering Password');
+        }
+    </script>
+</body>
+</html>
