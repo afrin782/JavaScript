@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label>Enter Starting Number</label><br />
+    <input type="number" id="txtStart" /><br />
+    <label>Enter Ending Number</label><br />
+    <input type="number" id="txtEnd" /><br />
+    <div id="output"></div>
+    <button onclick="PrintNumbers()">Print</button>
+    <script>
+      function PrintNumbers() {
+        let startVal = Number(document.getElementById("txtStart").value);
+        let endVal = Number(document.getElementById("txtEnd").value);
+        /* for (let i = startVal; i <= endVal; i+=2) 
+        {
+          let p = document.createElement('p');
+          p.textContent = i;
+          document.getElementById("output").appendChild(p);
+        }*/
+       if(startVal !==0 && endVal !==0) {
+        while (startVal <= endVal) {
+          let p = document.createElement("p");
+          p.textContent = startVal;
+          document.getElementById("output").appendChild(p);
+          startVal++;
+        }
+      }
+      else {
+        alert("Please Enter StartValue & EndValue")
+      }
+    }
+    </script>
+  </body>
+</html>
