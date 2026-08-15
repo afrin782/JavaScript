@@ -1,0 +1,150 @@
+//callback chain
+//add 2 numbers , then with that result multiply by 5 and after that subract by 3
+//result1 = a+b; //1+2
+//result2 = 3*5;
+//finalresult = 15-3; //12
+function Add(a, b, callback) {
+    let result1 = a + b;
+    callback(result1, subtract);
+}
+
+function Multiply(result1, callback) {
+    let result2 = result1 * 5;//step:2
+    callback(result2);
+}
+
+function subtract(result2) {
+    console.log(result2 - 3);//12 //step:3
+
+}
+//step1: Add
+// don't write final task in callback chain
+Add(1, 2, Multiply);
+
+//callback hell
+const Add = (a, b) => {
+    Multiply((c) => {
+        let d = c * 5;
+        subtract((d) => {
+            console.log(d - 3);
+
+        })
+    })
+}
+
+let result = Add(1, 2);
+
+//new code
+function A(a, callback) { //callback = B
+    console.log(typeof (a));
+    callback();
+}
+
+function B() {
+    console.log("Hello World");
+}
+A(1, B);
+
+
+//tea maker
+//callback hell
+function boilWater(callback) {
+    console.log("Boiling the water");
+    callback(serveTheTea);
+}
+
+function addTeaPowder(callback) {
+    console.log("Adding the tea powder");
+    callback();
+}
+
+function serveTheTea() {
+    console.log("serving the tea");
+}
+
+boilWater(() => {
+    addTeaPowder(() => {
+        serveTheTea();
+    })
+});
+
+//promise - resolve
+function boilWater1(callback) {
+    return new Promise((resolve, reject) => {
+        let waterAvailable = true;
+        if (waterAvailable) {
+            resolve("Boiling the water");
+        }
+        else {
+            reject("not available");
+        }
+    });
+}
+
+function addTeaPowder1(callback) {
+    return new Promise((resolve, reject) => {
+        let teaPowderAvailable = true;
+        if (teaPowderAvailable) {
+            resolve("adding the tea powder");
+        }
+        else {
+            reject("tea powder not");
+        }
+    });
+}
+
+function serveTheTea1() {
+    return new Promise((resolve, reject) => {
+        let cupAvailable = false;
+        if (cupAvailable) {
+            resolve("serving the tea");
+        }
+        else {
+            reject("cup not available");
+        }
+    });
+}
+//then - shows resolved task
+//catch - shows rejected taskor error
+//if you get else value , theb the (.then) value is not working , bcoz the 1st value is false , so it stopped
+/*boilWater1() 
+    .then((result) => {
+        console.log(result);
+        return addTeaPowder1();
+    })
+
+    .then((result) => {
+        console.log(result);
+        return serveTheTea1();
+    })
+
+    .then((result) => {
+        console.log(result);
+    })
+
+    .catch((error) => {
+        console.log(error)
+
+    })*/
+//async is a keyword, it is a syntax for asynchronous function
+//we can be able to use promise instead of callback
+//await is used to wait till the promise execution
+//we can be able to use async and await only in promise
+//we can be able to use await only in  async
+//we can be able to use try and catch only in await
+
+async function executeSteps() {
+    try {
+    let step1 = await boilWater1();
+    console.log(step1);
+    let step2 = await addTeaPowder1();
+    console.log(step2);
+    let step3 = await serveTheTea1();
+    console.log(step3);
+    }
+    catch (error) {
+        console.log(error)
+    }
+}
+
+executeSteps();
