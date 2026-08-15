@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="task" type="text" placeholder="Enter Task">
+    <button onclick="AddTaskToList()">Add Task</button>
+    <ul id="taskList"></ul>
+    <script>
+        //meaning - tasklist vandhu "ul" & li vandhu "li" ah consider aagikum
+        function AddTaskToList() {
+            let task = document.getElementById("task").value;
+            let li = document.createElement("li");//child
+
+            li.textContent = task;
+
+            let button = document.createElement("button");
+            button.textContent = "X";
+            li.appendChild(button);
+
+            let taskList = document.getElementById("taskList");//parent 
+            taskList.appendChild(li);
+
+            button.onclick = function () {
+                li.remove();
+                
+            }
+        }
+
+
+    </script>
+</body>
+</html>
