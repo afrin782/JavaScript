@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>SIR</h1>
+
+    <label>Name</label>
+    <input id="txtNAme" type="text" placeholder="Enter Your Name" /><br /><br />
+    <label>Age</label>
+    <input id="txtAge" type="number" placeholder="Enter Your Age" /><br /><br />
+    <label>Eligibility</label>
+    <input type="number" id="txtEligibility" disabled /><br /><br />
+
+    <button onclick="checkEligibility()">Check Eligibility</button>
+    <script>
+      function checkEligibility() {
+        let name = document.getElementById("txtName").value;
+        let age = document.getElementById("txtAge").value;
+        if (name !== "") {
+          if (age >= 18) {
+            document.getElementById("txtEligibility").disabled = false;
+            document.getElementById("txtEligibility").value = "Yes";
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

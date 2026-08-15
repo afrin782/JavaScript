@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="parent">
+        <h1>Hello World</h1>
+    </div>
+    <div id="switch"></div>
+    <button onclick="call()">Call Electrician</button>
+    <script>
+      function call() {
+        let electrician = "john";
+        let availability = "available";
+        if (availability !== "available") {
+          document.getElementById("switch").textContent = electrician;
+        } else {
+          electrician = "Alice";
+          document.getElementById("switch").textContent = electrician;
+        }
+      }
+    </script>
+  </body>
+</html>
