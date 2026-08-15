@@ -1,0 +1,53 @@
+// Write promise code using async/await.
+
+function examCell(callback) {
+    return new Promise((resolve, reject) => {
+        let readyForExam = true;
+        if (readyForExam) {
+            resolve("attend the exam and passed");
+        }
+        else {
+            reject("attended but failed");
+        }
+    });
+}
+
+function markResult(callback) {
+    return new Promise((resolve, reject) => {
+        let getPassMark = true;
+        if (getPassMark) {
+            resolve("Get seat in college");
+        }
+        else {
+            reject("not able to get seat anywhere");
+        }
+    });
+}
+
+function placement() {
+    return new Promise((resolve, reject) => {
+        let gotJob = false;
+        if (gotJob) {
+            resolve("success in life");
+        }
+        else {
+            reject("not success in life");
+        }
+    });
+}
+
+async function executeSteps() {
+    try {
+    let step1 = await examCell();
+    console.log(step1);
+    let step2 = await markResult();
+    console.log(step2);
+    let step3 = await placement();
+    console.log(step3);
+    }
+    catch (error) {
+        console.log(error)
+    }
+}
+
+executeSteps();
